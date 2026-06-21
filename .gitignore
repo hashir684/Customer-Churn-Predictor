@@ -1,3 +1,8 @@
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+notebooks/.ipynb_checkpoints/
+
 # Virtual environment
 venv/
 env/
@@ -16,13 +21,10 @@ build/
 # Environment variables
 .env
 .env.local
-.env.*.local
 
 # IDE
 .vscode/
 .idea/
-*.swp
-*.swo
 
 # OS
 .DS_Store
@@ -35,13 +37,6 @@ dataset/
 # Node (for later)
 node_modules/
 frontend/node_modules/
-.next/
-out/
-
-# Database
-*.db
-*.sqlite
 
 # Logs
 *.log
-npm-debug.log*
