@@ -3,7 +3,7 @@ import numpy as np
 from sqlalchemy import create_engine
 from dotenv import load_dotenv
 import os
-
+from db import get_engine
 load_dotenv()
 
 DB_HOST = os.getenv("DB_HOST")
@@ -11,11 +11,6 @@ DB_PORT = os.getenv("DB_PORT")
 DB_USER = os.getenv("DB_USER")
 DB_PASSWORD = os.getenv("DB_PASSWORD")
 DB_NAME = os.getenv("DB_NAME")
-
-def get_engine():
-    url = f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
-    engine = create_engine(url)
-    return engine
 
 def load_data():
     engine = get_engine()
@@ -37,15 +32,16 @@ def check_missing_values(df):
 
 def fix_data_types(df):
     print("\nFIXING DATA TYPES & BINARY ENCODING : ")
-    if df['TotalCharges'].dtype == 'object':   #charges conversion to float if in string
+    if df['TotalCharges'].dtype == 'object':
         df['TotalCharges'] = pd.to_numeric(df['TotalCharges'], errors='coerce')
-
+    
     print("\nBinary Encoding :")
     temp_df = df.select_dtypes(include=['object']).columns
     for col in temp_df:
-        if set(df[col].unique()).issubset({'Yes', 'No'}):
+        if set(df[col].dropna().unique()).issubset({'Yes', 'No'}):
             df[col] = df[col].map({'Yes': 1, 'No': 0})
             print(f"{col}")
+    
     return df
 
 def one_hot_encode(df):
@@ -54,7 +50,6 @@ def one_hot_encode(df):
 
     if categorical_cols:
         original_cols = len(df.columns)  
-        
         print(f"Encoding: {categorical_cols}")
         df = pd.get_dummies(df, columns=categorical_cols, drop_first=True)
         

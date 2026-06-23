@@ -3,7 +3,6 @@ from sqlalchemy import create_engine
 import pandas as pd
 from dotenv import load_dotenv
 import os
-
 load_dotenv()
 
 DB_HOST = os.getenv("DB_HOST")
@@ -21,7 +20,6 @@ def load_csv_to_mysql():
     engine = get_engine()
     df = pd.read_csv("dataset/WA_Fn-UseC_-Telco-Customer-Churn.csv")
     df.to_sql("customers", con=engine, if_exists="replace", index=False)
-    
     print("Data loaded into MySQL table: customers")
 
 if __name__ == "__main__":
