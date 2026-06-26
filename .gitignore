@@ -34,9 +34,10 @@ Thumbs.db
 models/*.pkl
 dataset/
 
-# Node (for later)
+# Node
 node_modules/
-frontend/node_modules/
+churn-predictor-frontend/node_modules/
+churn-predictor-frontend/dist/
 
 # Logs
 *.log
