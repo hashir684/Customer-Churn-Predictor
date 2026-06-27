@@ -6,7 +6,7 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  background: linear-gradient(135deg, #030b52c9 0%, #f1f5f9 100%);
   min-height: 100vh;
   padding: 20px;
 }
@@ -32,7 +32,7 @@ body {
 
 .header-content p {
   font-size: 16px;
-  color: #64748b;
+  color: #ffffff;
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
@@ -80,10 +80,6 @@ body {
   margin-bottom: 4px;
 }
 
-.panel-header p {
-  font-size: 13px;
-  color: #94a3b8;
-}
 
 .status-badge {
   display: flex;
@@ -176,7 +172,6 @@ select:focus {
   margin-top: 4px;
 }
 
-/* ===== RADIO BUTTONS ===== */
 .radio-group {
   display: flex;
   gap: 20px;
@@ -450,46 +445,3 @@ button {
   color: #991b1b;
 }
 
-/* ===== FOOTER ===== */
-.results-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px;
-  background: #f8fafc;
-  border-radius: 8px;
-  margin-top: 16px;
-  font-size: 12px;
-  color: #64748b;
-  border-top: 1px solid #e2e8f0;
-}
-
-.footer-left {
-  font-weight: 500;
-}
-
-.view-history-btn {
-  padding: 6px 12px;
-  background: white;
-  color: #6366f1;
-  border: 1px solid #e2e8f0;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 12px;
-  font-weight: 600;
-  transition: all 0.2s;
-}
-
-.view-history-btn:hover {
-  background: #f0f4ff;
-  border-color: #6366f1;
-}
-
-/* ===== APP FOOTER ===== */
-.app-footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 12px;
-  color: #94a3b8;
-  margin-top: 40px;
-}

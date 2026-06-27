@@ -77,7 +77,6 @@ export default function App() {
         <div className="form-panel">
           <div className="panel-header">
             <h2>👤 Customer Details</h2>
-            <p>Enter customer information to get churn prediction</p>
           </div>
 
           <form onSubmit={handleSubmit}>
@@ -251,15 +250,7 @@ export default function App() {
         <div className="result-panel">
           <div className="panel-header">
             <h2>📊 Prediction Insights</h2>
-            <p>AI prediction results and recommendations</p>
-            {result && (
-              <div className="status-badge">
-                <span className="status-dot"></span>
-                Analysis Complete
-              </div>
-            )}
           </div>
-
           {!result ? (
             <div className="empty-state">
               <div className="empty-state-icon">🎯</div>
