@@ -1,0 +1,123 @@
+.auth-page {
+  position: fixed;
+  inset: 0;
+  overflow-y: auto;
+  background: #171918;
+  color: #f5ecd9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.auth-page .auth-layout {
+  width: 100%;
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.auth-page .auth-eyebrow {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #a9adaa;
+  margin-bottom: 12px;
+}
+
+.auth-page .auth-intro h1 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #f5ecd9;
+  margin-bottom: 12px;
+}
+
+.auth-page .auth-sub {
+  font-size: 14px;
+  color: #a9adaa;
+}
+
+.auth-page .auth-form label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #f5ecd9;
+  text-transform: none;
+  letter-spacing: 0;
+  margin-bottom: 8px;
+}
+
+.auth-page .auth-form input {
+  width: 100%;
+  height: 48px;
+  padding: 0 14px;
+  margin-bottom: 20px;
+  background: #212527;
+  border: 1px solid #6b7072;
+  border-radius: 2px;
+  color: #f5ecd9;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+.auth-page .auth-form input:focus {
+  outline: none;
+  border-color: #f0b968;
+  background: #212527;
+  color: #f5ecd9;
+  box-shadow: none;
+}
+
+.auth-page .auth-btn {
+  width: 100%;
+  flex: none;
+  padding: 14px;
+  background: #f0b968;
+  color: #171918;
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.auth-page .auth-btn:hover:not(:disabled) {
+  background: #f5c97f;
+}
+
+.auth-page .auth-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.auth-page .auth-link {
+  flex: none;
+  width: auto;
+  display: inline-block;
+  margin-top: 24px;
+  padding: 0 0 2px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #f0b968;
+  border-radius: 0;
+  color: #f0b968;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.auth-page .auth-error {
+  margin-bottom: 16px;
+  font-size: 13px;
+  color: #ff8a80;
+}
+
+@media (max-width: 700px) {
+  .auth-page .auth-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
